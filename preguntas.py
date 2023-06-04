@@ -315,7 +315,6 @@ def pregunta_06():
 
     return res
 
-print(pregunta_06())
 
 def pregunta_07():
     """
@@ -338,16 +337,16 @@ def pregunta_07():
     ]
 
     """
-    dicti = {"0":list(),
-             "1":list(),
-             "2":list(),
-             "3":list(),
-             "4":list(),
-             "5":list(),
-             "6":list(),
-             "7":list(),
-             "8":list(),
-             "9":list()}
+    dicti = {0:list(),
+             1:list(),
+             2:list(),
+             3:list(),
+             4:list(),
+             5:list(),
+             6:list(),
+             7:list(),
+             8:list(),
+             9:list()}
 
 
     import csv
@@ -358,29 +357,30 @@ def pregunta_07():
         for column in row[1]:
           match column:
             case "0":
-              dicti["0"].append(row[0]) 
+              dicti[0].append(row[0]) 
             case "1":
-              dicti["1"].append(row[0]) 
+              dicti[1].append(row[0]) 
             case "2":
-              dicti["2"].append(row[0])
+              dicti[2].append(row[0])
             case "3":
-              dicti["3"].append(row[0])
+              dicti[3].append(row[0])
             case "4":
-              dicti["4"].append(row[0])
+              dicti[4].append(row[0])
             case "5":
-              dicti["5"].append(row[0])
+              dicti[5].append(row[0])
             case "6":
-              dicti["6"].append(row[0])
+              dicti[6].append(row[0])
             case "7":
-              dicti["7"].append(row[0])
+              dicti[7].append(row[0])
             case "8":
-              dicti["8"].append(row[0])
+              dicti[8].append(row[0])
             case "9":
-              dicti["9"].append(row[0])
+              dicti[9].append(row[0])
         
 
     return list(dicti.items())
 
+# print(pregunta_07())
 
 def pregunta_08():
     """
@@ -415,6 +415,7 @@ def pregunta_08():
     
     return listTuples
 
+# print(pregunta_08())
 
 def pregunta_09():
     """
