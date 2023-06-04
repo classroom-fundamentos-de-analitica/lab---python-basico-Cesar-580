@@ -233,12 +233,11 @@ def pregunta_05():
             
     
         
-    return [("A",max(A),min(A)),
-            ("B",max(B),min(B)),
-            ("C",max(C),min(C)),
-            ("D",max(D),min(D)),
-            ("E",max(E),min(E))]
-
+    return [("A",int(max(A)),int(min(A))),
+            ("B",int(max(B)),int(min(B))),
+            ("C",int(max(C)),int(min(C))),
+            ("D",int(max(D)),int(min(D))),
+            ("E",int(max(E)),int(min(E)))]
 
 
 def pregunta_06():
@@ -303,8 +302,7 @@ def pregunta_06():
             case "jjj":
               jjj.append(int(column.split(":")[1]))
           
-
-    return [("aaa",min(aaa),max(aaa)),
+    res = [("aaa",min(aaa),max(aaa)),
     ("bbb",min(bbb),max(bbb)),
     ("ccc",min(ccc),max(ccc)),
     ("ddd",min(ddd),max(ddd)),
@@ -315,6 +313,9 @@ def pregunta_06():
     ("iii",min(iii),max(iii)),
     ("jjj",min(jjj),max(jjj))]
 
+    return res
+
+print(pregunta_06())
 
 def pregunta_07():
     """
@@ -519,7 +520,7 @@ def pregunta_11():
       reader_variable = csv.reader(csv_file, delimiter="	")
       for row in reader_variable:
         for col in row[3].split(","):
-            dicto11[str(i)] = dicto11.get(str(col),0) + int(row[1])
+            dicto11[str(col)] = dicto11.get(str(col),0) + int(row[1])
     return dict(sorted(dicto11.items()))
 
 
