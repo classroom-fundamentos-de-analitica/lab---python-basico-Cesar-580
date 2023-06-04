@@ -21,7 +21,19 @@ def pregunta_01():
     214
 
     """
-    return
+    import csv
+    with open('data.csv') as csv_file:
+
+      suma = 0
+      reader_variable = csv.reader(csv_file, delimiter="	")
+      for row in reader_variable:
+        for column in range(len(row)):
+          if column == 1:
+            # print(row[column])
+            suma += int(row[column])
+
+
+    return suma
 
 
 def pregunta_02():
@@ -39,7 +51,30 @@ def pregunta_02():
     ]
 
     """
-    return
+    import csv
+    with open('data.csv') as csv_file:
+
+      dicti = {"A":0,
+               "B":0,
+               "C":0,
+               "D":0,
+               "E":0}
+
+      reader_variable = csv.reader(csv_file, delimiter="	")
+      for row in reader_variable:
+        match row[0]:
+          case "A":
+            dicti["A"] += 1
+          case "B":
+            dicti["B"] += 1
+          case "C":
+            dicti["C"] += 1
+          case "D":
+            dicti["D"] += 1
+          case "E":
+            dicti["E"] += 1
+
+    return list(dicti.items())
 
 
 def pregunta_03():
@@ -57,7 +92,32 @@ def pregunta_03():
     ]
 
     """
-    return
+    import csv
+    with open('data.csv') as csv_file:
+
+      dicti = {"A":0,
+               "B":0,
+               "C":0,
+               "D":0,
+               "E":0}
+
+      reader_variable = csv.reader(csv_file, delimiter="	")
+      for row in reader_variable:
+        for column in range(len(row)):
+          if column == 1:
+            match row[0]:
+              case "A":
+                dicti["A"] += int(row[1])
+              case "B":
+                dicti["B"] += int(row[1])
+              case "C":
+                dicti["C"] += int(row[1])
+              case "D":
+                dicti["D"] += int(row[1])
+              case "E":
+                dicti["E"] += int(row[1])
+
+    return list(dicti.items())
 
 
 def pregunta_04():
@@ -82,7 +142,53 @@ def pregunta_04():
     ]
 
     """
-    return
+    dicti = {"01":0,
+             "02":0,
+             "03":0,
+             "04":0,
+             "05":0,
+             "06":0,
+             "07":0,
+             "08":0,
+             "09":0,
+             "10":0,
+             "11":0,
+             "12":0}
+
+    import csv
+    with open('data.csv') as csv_file:
+
+      reader_variable = csv.reader(csv_file, delimiter="	")
+      for row in reader_variable:
+        for column in range(len(row)):
+          if column == 1:
+            match row[2].split("-")[1]:
+              case "01":
+                dicti["01"] += 1
+              case "02":
+                dicti["02"] += 1
+              case "03":
+                dicti["03"] += 1
+              case "04":
+                dicti["04"] += 1
+              case "05":
+                dicti["05"] += 1
+              case "06":
+                dicti["06"] += 1
+              case "07":
+                dicti["07"] += 1
+              case "08":
+                dicti["08"] += 1
+              case "09":
+                dicti["09"] += 1
+              case "10":
+                dicti["10"] += 1
+              case "11":
+                dicti["11"] += 1
+              case "12":
+                dicti["12"] += 1
+
+    return list(dicti.items())
 
 
 def pregunta_05():
@@ -99,8 +205,40 @@ def pregunta_05():
         ("E", 9, 1),
     ]
 
-    """
-    return
+    """ 
+    A = []
+    B = []
+    C = []
+    D = []
+    E = []
+    
+    import csv
+    with open('data.csv') as csv_file:
+
+      reader_variable = csv.reader(csv_file, delimiter="	")
+      for row in reader_variable:
+        for column in range(len(row)):
+          if column == 1:
+              match row[0]:
+                case "A":
+                  A.append(row[1])
+                case "B":
+                  B.append(row[1])
+                case "C":
+                  C.append(row[1])
+                case "D":
+                  D.append(row[1])
+                case "E":
+                  E.append(row[1])
+            
+    
+        
+    return [("A",max(A),min(A)),
+            ("B",max(B),min(B)),
+            ("C",max(C),min(C)),
+            ("D",max(D),min(D)),
+            ("E",max(E),min(E))]
+
 
 
 def pregunta_06():
@@ -125,7 +263,57 @@ def pregunta_06():
     ]
 
     """
-    return
+    aaa = []
+    bbb = []
+    ccc = []
+    ddd = []
+    eee = []
+    fff = []
+    ggg = []
+    hhh = []
+    iii = []
+    jjj = []
+
+    import csv
+    with open('data.csv') as csv_file:
+
+      reader_variable = csv.reader(csv_file, delimiter="	")
+      for row in reader_variable:
+        for column in row[4].split(","):
+          # print(column)
+          match column.split(":")[0]:
+            case "aaa":
+              aaa.append(int(column.split(":")[1]))
+            case "bbb":
+              bbb.append(int(column.split(":")[1]))
+            case "ccc":
+              ccc.append(int(column.split(":")[1]))
+            case "ddd":
+              ddd.append(int(column.split(":")[1]))
+            case "eee":
+              eee.append(int(column.split(":")[1]))
+            case "fff":
+              fff.append(int(column.split(":")[1]))
+            case "ggg":
+              ggg.append(int(column.split(":")[1]))
+            case "hhh":
+              hhh.append(int(column.split(":")[1]))
+            case "iii":
+              iii.append(int(column.split(":")[1]))
+            case "jjj":
+              jjj.append(int(column.split(":")[1]))
+          
+
+    return [("aaa",min(aaa),max(aaa)),
+    ("bbb",min(bbb),max(bbb)),
+    ("ccc",min(ccc),max(ccc)),
+    ("ddd",min(ddd),max(ddd)),
+    ("eee",min(eee),max(eee)),
+    ("fff",min(fff),max(fff)),
+    ("ggg",min(ggg),max(ggg)),
+    ("hhh",min(hhh),max(hhh)),
+    ("iii",min(iii),max(iii)),
+    ("jjj",min(jjj),max(jjj))]
 
 
 def pregunta_07():
@@ -149,7 +337,48 @@ def pregunta_07():
     ]
 
     """
-    return
+    dicti = {"0":list(),
+             "1":list(),
+             "2":list(),
+             "3":list(),
+             "4":list(),
+             "5":list(),
+             "6":list(),
+             "7":list(),
+             "8":list(),
+             "9":list()}
+
+
+    import csv
+    with open('data.csv') as csv_file:
+
+      reader_variable = csv.reader(csv_file, delimiter="	")
+      for row in reader_variable:
+        for column in row[1]:
+          match column:
+            case "0":
+              dicti["0"].append(row[0]) 
+            case "1":
+              dicti["1"].append(row[0]) 
+            case "2":
+              dicti["2"].append(row[0])
+            case "3":
+              dicti["3"].append(row[0])
+            case "4":
+              dicti["4"].append(row[0])
+            case "5":
+              dicti["5"].append(row[0])
+            case "6":
+              dicti["6"].append(row[0])
+            case "7":
+              dicti["7"].append(row[0])
+            case "8":
+              dicti["8"].append(row[0])
+            case "9":
+              dicti["9"].append(row[0])
+        
+
+    return list(dicti.items())
 
 
 def pregunta_08():
@@ -174,7 +403,16 @@ def pregunta_08():
     ]
 
     """
-    return
+    res = pregunta_07()
+
+    listTuples = []
+    for row in res:
+      index = row[0]
+      sinRep = set(row[1])
+      listTuples.append((index,sorted(sinRep)))
+
+    
+    return listTuples
 
 
 def pregunta_09():
@@ -197,7 +435,32 @@ def pregunta_09():
     }
 
     """
-    return
+    import csv
+    import re
+
+    dictio = {"aaa":0,
+              "bbb":0,
+              "ccc":0,
+              "ddd":0,
+              "eee":0,
+              "fff":0,
+              "ggg":0,
+              "hhh":0,
+              "iii":0,
+              "jjj":0}
+
+    delimiters = r':|,'
+
+    with open('data.csv') as csv_file:
+
+      reader_variable = csv.reader(csv_file, delimiter="	")
+      for row in reader_variable:
+        a = re.split(delimiters, row[4])
+        for item in a:
+          if item in dictio:
+            dictio[item] += 1
+ 
+    return dictio
 
 
 def pregunta_10():
@@ -215,10 +478,19 @@ def pregunta_10():
         ("E", 2, 3),
         ("E", 3, 3),
     ]
-
-
     """
-    return
+    import csv
+
+    list10 = []
+
+    with open('data.csv') as csv_file:
+      reader_variable = csv.reader(csv_file, delimiter="	")
+      for row in reader_variable:
+        # print(row)
+        list10.append((row[0],len(row[3].split(',')),len(row[4].split(','))))
+
+
+    return list10
 
 
 def pregunta_11():
@@ -239,7 +511,16 @@ def pregunta_11():
 
 
     """
-    return
+    import csv
+
+    dicto11={}
+
+    with open('data.csv') as csv_file:
+      reader_variable = csv.reader(csv_file, delimiter="	")
+      for row in reader_variable:
+        for col in row[3].split(","):
+            dicto11[str(i)] = dicto11.get(str(col),0) + int(row[1])
+    return dict(sorted(dicto11.items()))
 
 
 def pregunta_12():
@@ -257,4 +538,11 @@ def pregunta_12():
     }
 
     """
-    return
+    dicto12={}
+    import csv
+    with open('data.csv') as csv_file:
+      reader_variable = csv.reader(csv_file, delimiter="	")
+      for row in reader_variable:
+        for col in row[4].split(","):
+            dicto12[row[0]] = dicto12.get(row[0],0) + int(col[4:])
+    return dict(sorted(dicto12.items()))
